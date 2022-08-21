@@ -39,6 +39,22 @@ export class Mod10 {
   };
 
   /**
+   * モジュラス10 ウエイト3
+   * @param value チェックディジットを追加したい値
+   * @returns チェックディジット付きの値
+   */
+  mod10w3 = (value: number): string => {
+    let sum = 0;
+    const valueArray = this.numberToArrayReverse(value)
+    valueArray.forEach((val, idx) => {
+      // 偶数の場合、値に3をかける
+      sum += idx % 3 === 0 ? +val * 3 : +val;
+    });
+    const cd = sum % 10 === 0 ? 0 : 10 - (sum % 10);
+    return `${value}${cd}`;
+  }
+
+  /**
    * 数値を1文字づつ配列に挿入し、逆順にする
    * @param value 配列に変換したい数値
    * @returns 1文字づつ配列に挿入したあと、反転させた配列
