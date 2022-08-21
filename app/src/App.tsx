@@ -12,14 +12,18 @@ function App() {
   const [inputValue, setInputValue] = useState<
     string | number | readonly string[] | undefined
   >(undefined);
+  // チェックディジットを付与した値を保持
+  const [checkDigit, setCheckDigit] = useState<string>('');
 
   /**
    * チェックディジットを求める
    * @returns チェックディジットを含んだ値
    */
-  const getCheckDigit = (): string => {
+  const getCheckDigit = (): void => {
+    // 初期化
+    setCheckDigit('')
     const cd = new CheckDigit();
-    return cd.getCd(Number(selectType), Number(inputValue))
+    setCheckDigit( cd.getCd(Number(selectType), Number(inputValue)))
   };
 
   return (
@@ -32,7 +36,7 @@ function App() {
           onChange={(event) => setSelectType(event.target.value)}
         >
           {Const.CHECK_DIGIT_TYPE.map((val) => {
-            return <option value={val.selectType}>{val.name}</option>;
+            return <option key={`key_${val.selectType}`} value={val.selectType}>{val.name}</option>;
           })}
         </select>
       </div>
@@ -46,7 +50,7 @@ function App() {
       <div>
         <button onClick={() => {getCheckDigit()}}>チェックディジット計算</button>
       </div>
-      <div><p>{getCheckDigit()}</p></div>
+      <div><p>{checkDigit}</p></div>
     </div>
   );
 }
