@@ -1,38 +1,147 @@
 .App {
+  font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
+}
+
+/* ヘッダー */
+header {
+  background-color: black;
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+}
+h1 {
   text-align: center;
+  margin: 0px;
+  font-size: 2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#main {
+  width: 90%;
+  margin: auto;
+  padding-top: calc(3rem + 20px);
+  padding-bottom: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* 説明文 */
+#explanation {
+  width: 100%;
+  margin: auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* チェックディジット種類 */
+#cd-type p {
+  font-size: 2rem;
+  margin: 5px 0px;
+}
+#cd-type select {
+  width: 95%;
+  height: 2.5rem;
+}
+
+/* チェックディジットを求めたい値 */
+#cd-input p {
+  font-size: 2rem;
+  margin: 5px 0px;
+}
+#cd-input input {
+  width: 95%;
+  font-size: 1.5rem;
+}
+
+/* 計算ボタン */
+#calc {
+  width: 100%;
+  margin: 30px auto 10px auto;
+}
+#calc button {
+  width: 97%;
+  border: solid 1px black;
+  font-size: 1.5rem;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.calc-button {
+  background-color: white;
+  color: black;
+}
+.calc-button:hover {
+  color: white;
+  background-color: black;
+}
+/* 計算ボタン非活性 */
+.button-disabled {
+  background-color: rgb(216, 216, 216);
+  color: rgb(99, 99, 99);
+  border: none !important;
+}
+
+/* 計算結果 */
+#result p {
+  font-size: 2rem;
+}
+
+/* フッター */
+footer {
+  background-color: black;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+small {
+  font-size: 14px;
+}
+small a {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* PC */
+@media screen and (min-width:1000px) {
+    /* チェックディジット種類 */
+  #cd-type {
+    width: 100%;
+    margin: auto;
   }
-  to {
-    transform: rotate(360deg);
+
+  #cd-type p {
+    font-size: 3rem;
+    margin: 5px 10px 5px 0px;
+    display: inline-block;
+  }
+  #cd-type p:last-child {
+    position: relative;
+  }
+  #cd-type select {
+    height: 3em;
+    width: 400px;
+    position: absolute;
+    top: -32px;
+    left: 20px;
+  }
+
+  #cd-input {
+    width: 100%;
+    margin: auto;
+  }
+  #cd-input p, #cd-input div {
+    display: inline-block;
+  }
+  #cd-input p {
+    font-size: 3rem;
+    margin: 5px 10px 5px 0px;
+  }
+  #cd-input div {
+    position: relative;
+  }
+  #cd-input input {
+    width: 400px;
+    padding: 5px;
+    position: absolute;
+    top: -39px;
+    left: 20px;
   }
 }
