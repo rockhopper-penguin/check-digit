@@ -1,12 +1,30 @@
 .App {
   font-family: "Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans",Meiryo,sans-serif;
-  width: 90%;
-  margin: auto;
 }
-/* タイトル */
+
+/* ヘッダー */
+header {
+  background-color: black;
+  color: white;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+}
 h1 {
   text-align: center;
+  margin: 0px;
+  font-size: 2rem;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
+
+#main {
+  width: 90%;
+  margin: auto;
+  padding-top: calc(3rem + 20px);
+  padding-bottom: 30px;
+}
+
 /* 説明文 */
 #explanation {
   width: 100%;
@@ -63,6 +81,22 @@ h1 {
 /* 計算結果 */
 #result p {
   font-size: 2rem;
+}
+
+/* フッター */
+footer {
+  background-color: black;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+}
+small {
+  font-size: 14px;
+}
+small a {
+  color: white;
 }
 
 /* PC */
